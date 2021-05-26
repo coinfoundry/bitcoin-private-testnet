@@ -1,6 +1,6 @@
 #!/bin/bash
 
 echo "* Starting node-bob ..."
-/usr/bin/bitcoind -daemon -datadir=/data/node-bob -regtest=1 -port=18002 -rpcuser=user -rpcpassword=pass -rpcport=16002 -rpcbind=0.0.0.0 -rpcallowip=::/0 -discover=0 -server=1 -rpcssl=0
+/usr/bin/bitcoind -daemon -datadir=/data/node-bob -regtest=1 -port=18002 -rpcuser=user -rpcpassword=pass -rpcport=16002 -rpcbind=0.0.0.0 -rpcallowip=0.0.0.0/0 -discover=0 -server=1
 
 s6-svc -d /var/run/s6/services/node-bob

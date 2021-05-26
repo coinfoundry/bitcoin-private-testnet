@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "* Starting node-pool ..."
-/usr/bin/bitcoind -daemon -datadir=/data/node-pool -regtest=1 -port=18001 -rpcuser=user -rpcpassword=pass -rpcport=16001 -rpcbind=0.0.0.0 -rpcallowip=::/0 -discover=0 -server=1 -rpcssl=0 -addnode=127.0.0.1:18002 -addnode=127.0.0.1:18003
+/usr/bin/bitcoind -daemon -datadir=/data/node-pool -regtest=1 -port=18001 -rpcuser=user -rpcpassword=pass -rpcport=16001 -rpcbind=0.0.0.0 -rpcallowip=0.0.0.0/0 -discover=0 -server=1 -fallbackfee=0 -addnode=127.0.0.1:18002 -addnode=127.0.0.1:18003
 
 
 s6-svc -d /var/run/s6/services/node-pool
